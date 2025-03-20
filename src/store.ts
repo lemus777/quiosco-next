@@ -11,7 +11,7 @@ export const useStore = create<Store>((set) => ({
   order: [],
   addToOrder: (product) => {
     const {categoryId, image, ...data} = product
-    console.log(data)
+    
     set((state) => ({
       order: [...state.order, {
         ...data,
