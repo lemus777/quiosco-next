@@ -28,7 +28,7 @@ export default async function ProductsPage({searchParams} : {searchParams: {page
   const productsData = getProducts(page, pageSize)
   const totalProductsData = productCount()
   const [products, totalProducts] = await Promise.all([productsData, totalProductsData])
-  console.log(totalProducts)
+  const totalPages = Math.ceil(totalProducts / pageSize)
 
   return (
     <>
@@ -38,6 +38,7 @@ export default async function ProductsPage({searchParams} : {searchParams: {page
       />
       <ProductsPagination
         page={page}
+        totalPages={totalPages}
       />
     </>
   )
