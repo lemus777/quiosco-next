@@ -6,7 +6,6 @@ async function getCategories() {
 
 export default async function ProductForm() {
   const categories = await getCategories()
-  console.log(categories)
 
   return (
     <>
